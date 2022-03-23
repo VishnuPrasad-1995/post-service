@@ -25,5 +25,17 @@ public class PostController {
         return new ResponseEntity<>(postService.getPosts(), HttpStatus.OK);
     }
 
+    @PostMapping
+    public ResponseEntity<PostDto> createPost(@Valid @RequestBody PostRequest postRequest)
+    {
+        return new ResponseEntity<>(postService.createPost(postRequest), HttpStatus.CREATED);
+    }
+    @GetMapping("/{postId}")
+    public ResponseEntity<PostDto> getPostDetails(@PathVariable("postId") String postId)
+    {
+        return new ResponseEntity<>(postService.getPostDetails(postId), HttpStatus.OK);
+    }
+
+
 
 }

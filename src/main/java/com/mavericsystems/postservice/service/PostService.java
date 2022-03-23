@@ -10,5 +10,6 @@ import java.util.List;
 public interface PostService {
 
     List<Post> getPosts();
-
+    PostDto createPost(PostRequest postRequest);
+    PostDto getPostDetails(String postId);
 }

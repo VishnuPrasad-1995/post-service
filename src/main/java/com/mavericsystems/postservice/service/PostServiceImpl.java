@@ -38,7 +38,37 @@ public class PostServiceImpl implements PostService{
     public List<Post> getPosts() {
         return postRepo.findAll();
     }
+    @Override
+    public PostDto createPost(PostRequest postRequest) {
+        Post post = new Post();
+        post.setPost(postRequest.getPost());
+        post.setPostedBy(postRequest.getPostedBy());
+        post.setCreatedAt(LocalDate.now());
+        post.setUpdatedAt(LocalDate.now());
+        postRepo.save(post);
+        return new PostDto(post.getId(),post.getPost(),post.getPostedBy(),
+                post.getCreatedAt(),post.getUpdatedAt(),
+                likeFeign.getLikesCount(post.getId())
+                ,commentFeign.getCommentsCount(post.getId()));
+//                userFeign.getUserById(post.getPostedBy()).getFirstName());
 
+    }
+
+    @Override
+    public PostDto getPostDetails(String postId) {
+
+        Optional<Post> post1 = postRepo.findById(postId);
+        if(post1.isPresent()) {
+            Post post = post1.get();
+            return new PostDto(post.getId(), post.getPost(), post.getPostedBy(), post.getCreatedAt(),
+                    post.getUpdatedAt(), likeFeign.getLikesCount(postId),
+                    commentFeign.getCommentsCount(postId));
+//                    userFeign.getUserById(post.getPostedBy()).getFirstName());
+        }
+        else{
+            throw new PostNotFoundException(POSTNOTFOUND + postId);
+        }
+    }
 
 
 }
