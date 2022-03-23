@@ -21,7 +21,7 @@ public class PostController {
     PostService postService;
 
     @GetMapping
-    public ResponseEntity<List<Post>> getPosts(@QueryParam("page") Integer page, @QueryParam("pageSize") Integer pageSize)
+    public ResponseEntity<List<PostDto>> getPosts(@QueryParam("page") Integer page, @QueryParam("pageSize") Integer pageSize)
     {
         return new ResponseEntity<>(postService.getPosts(page, pageSize), HttpStatus.OK);
     }
@@ -37,7 +37,7 @@ public class PostController {
         return new ResponseEntity<>(postService.getPostDetails(postId), HttpStatus.OK);
     }
     @PutMapping("/{postId}")
-    public ResponseEntity<Post> updatePost(@PathVariable("postId") String postId,@Valid @RequestBody PostRequest postRequest)
+    public ResponseEntity<PostDto> updatePost(@PathVariable("postId") String postId,@Valid @RequestBody PostRequest postRequest)
     {
         return new ResponseEntity<>(postService.updatePost(postId, postRequest), HttpStatus.OK);
     }

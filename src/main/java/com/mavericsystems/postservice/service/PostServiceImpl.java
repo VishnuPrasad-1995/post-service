@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,7 +37,7 @@ public class PostServiceImpl implements PostService{
 
 
     @Override
-    public List<Post> getPosts(Integer page, Integer pageSize) {
+    public List<PostDto> getPosts(Integer page, Integer pageSize) {
         if(page==null){
             page=1;
         }
@@ -44,8 +45,16 @@ public class PostServiceImpl implements PostService{
             pageSize=10;
         }
         Page<Post> posts = postRepo.findAll(PageRequest.of(page-1, pageSize));
+        List<PostDto> postDtoList = new ArrayList<>();
+        for (Post post : posts){
+            postDtoList.add(new PostDto(post.getId(),post.getPost(), userFeign.getUserById(post.getPostedBy()),
+                    post.getCreatedAt(),post.getUpdatedAt(),
+                    likeFeign.getLikesCount(post.getId())
+                    ,commentFeign.getCommentsCount(post.getId())));
+        }
 
-        return posts.toList();
+
+        return postDtoList;
     }
     @Override
     public PostDto createPost(PostRequest postRequest) {
@@ -55,8 +64,7 @@ public class PostServiceImpl implements PostService{
         post.setCreatedAt(LocalDate.now());
         post.setUpdatedAt(LocalDate.now());
         postRepo.save(post);
-        String email =  userFeign.getUserById(post.getPostedBy()).getEmail();
-        return new PostDto(post.getId(),post.getPost(),email,
+        return new PostDto(post.getId(),post.getPost(),userFeign.getUserById(post.getPostedBy()),
                 post.getCreatedAt(),post.getUpdatedAt(),
                 likeFeign.getLikesCount(post.getId())
                 ,commentFeign.getCommentsCount(post.getId()));
@@ -71,7 +79,7 @@ public class PostServiceImpl implements PostService{
         if(post1.isPresent()) {
             Post post = post1.get();
 
-            return new PostDto(post.getId(), post.getPost(), userFeign.getUserById(post.getPostedBy()).getEmail(), post.getCreatedAt(),
+            return new PostDto(post.getId(), post.getPost(), userFeign.getUserById(post.getPostedBy()), post.getCreatedAt(),
                     post.getUpdatedAt(), likeFeign.getLikesCount(postId),
                     commentFeign.getCommentsCount(postId));
 
@@ -82,7 +90,7 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public Post updatePost(String postId, PostRequest postRequest) {
+    public PostDto updatePost(String postId, PostRequest postRequest) {
 
 
 
@@ -91,7 +99,10 @@ public class PostServiceImpl implements PostService{
             Post post1 = post.get();
             post1.setPost(postRequest.getPost());
             post1.setUpdatedAt(LocalDate.now());
-            return postRepo.save(post1);
+            postRepo.save(post1);
+            return new PostDto(post1.getId(), post1.getPost(), userFeign.getUserById(post1.getPostedBy()), post1.getCreatedAt(),
+                    post1.getUpdatedAt(), likeFeign.getLikesCount(postId),
+                    commentFeign.getCommentsCount(postId));
         }
         else {
             throw new PostNotFoundException(POSTNOTFOUND + postId);

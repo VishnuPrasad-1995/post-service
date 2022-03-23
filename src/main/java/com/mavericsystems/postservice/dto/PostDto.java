@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class PostDto {
     private String id;
     private String post;
-    private String postedBy;
+    private UserDto postedBy;
     private LocalDate createdAt;
     private LocalDate updatedAt;
     private int likesCount;

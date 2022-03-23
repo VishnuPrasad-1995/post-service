@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface PostService {
 
-    List<Post> getPosts(Integer page, Integer pageSize);
+    List<PostDto> getPosts(Integer page, Integer pageSize);
     PostDto createPost(PostRequest postRequest);
     PostDto getPostDetails(String postId);
-    Post updatePost(String postId, PostRequest postRequest);
+    PostDto updatePost(String postId, PostRequest postRequest);
     String deletePost(String postId);
 }
