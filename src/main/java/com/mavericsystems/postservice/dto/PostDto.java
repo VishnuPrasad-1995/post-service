@@ -17,5 +17,4 @@ public class PostDto {
     private LocalDate updatedAt;
     private int likesCount;
     private int commentsCount;
-    private UserDto userDto;
 }

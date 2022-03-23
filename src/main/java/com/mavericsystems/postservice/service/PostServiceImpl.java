@@ -55,10 +55,11 @@ public class PostServiceImpl implements PostService{
         post.setCreatedAt(LocalDate.now());
         post.setUpdatedAt(LocalDate.now());
         postRepo.save(post);
-        return new PostDto(post.getId(),post.getPost(),post.getPostedBy(),
+        String email =  userFeign.getUserById(post.getPostedBy()).getEmail();
+        return new PostDto(post.getId(),post.getPost(),email,
                 post.getCreatedAt(),post.getUpdatedAt(),
                 likeFeign.getLikesCount(post.getId())
-                ,commentFeign.getCommentsCount(post.getId()),userFeign.getUserById(post.getPostedBy()));
+                ,commentFeign.getCommentsCount(post.getId()));
 
 
     }
@@ -69,9 +70,10 @@ public class PostServiceImpl implements PostService{
         Optional<Post> post1 = postRepo.findById(postId);
         if(post1.isPresent()) {
             Post post = post1.get();
-            return new PostDto(post.getId(), post.getPost(), post.getPostedBy(), post.getCreatedAt(),
+
+            return new PostDto(post.getId(), post.getPost(), userFeign.getUserById(post.getPostedBy()).getEmail(), post.getCreatedAt(),
                     post.getUpdatedAt(), likeFeign.getLikesCount(postId),
-                    commentFeign.getCommentsCount(postId),userFeign.getUserById(post.getPostedBy()));
+                    commentFeign.getCommentsCount(postId));
 
         }
         else{
