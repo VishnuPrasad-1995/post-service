@@ -12,4 +12,6 @@ public interface PostService {
     List<Post> getPosts();
     PostDto createPost(PostRequest postRequest);
     PostDto getPostDetails(String postId);
+    Post updatePost(String postId, PostRequest postRequest);
+    String deletePost(String postId);
 }
