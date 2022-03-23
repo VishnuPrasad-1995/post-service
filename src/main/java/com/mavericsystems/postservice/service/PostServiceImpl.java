@@ -9,7 +9,6 @@ import com.mavericsystems.postservice.feign.LikeFeign;
 import com.mavericsystems.postservice.feign.UserFeign;
 import com.mavericsystems.postservice.model.Post;
 import com.mavericsystems.postservice.repo.PostRepo;
-import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -66,6 +65,36 @@ public class PostServiceImpl implements PostService{
 //                    userFeign.getUserById(post.getPostedBy()).getFirstName());
         }
         else{
+            throw new PostNotFoundException(POSTNOTFOUND + postId);
+        }
+    }
+
+    @Override
+    public Post updatePost(String postId, PostRequest postRequest) {
+
+
+
+        Optional<Post> post = postRepo.findById(postId);
+        if(post.isPresent()) {
+            Post post1 = post.get();
+            post1.setPost(postRequest.getPost());
+            post1.setUpdatedAt(LocalDate.now());
+            return postRepo.save(post1);
+        }
+        else {
+            throw new PostNotFoundException(POSTNOTFOUND + postId);
+        }
+    }
+
+
+
+    @Override
+    public String deletePost(String postId) {
+        try {
+            postRepo.deleteById(postId);
+            return DELETEPOST;
+        }
+        catch (Exception e){
             throw new PostNotFoundException(POSTNOTFOUND + postId);
         }
     }
