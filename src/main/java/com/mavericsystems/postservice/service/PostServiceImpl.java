@@ -10,6 +10,8 @@ import com.mavericsystems.postservice.feign.UserFeign;
 import com.mavericsystems.postservice.model.Post;
 import com.mavericsystems.postservice.repo.PostRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -34,8 +36,16 @@ public class PostServiceImpl implements PostService{
 
 
     @Override
-    public List<Post> getPosts() {
-        return postRepo.findAll();
+    public List<Post> getPosts(Integer page, Integer pageSize) {
+        if(page==null){
+            page=1;
+        }
+        if(pageSize==null){
+            pageSize=10;
+        }
+        Page<Post> posts = postRepo.findAll(PageRequest.of(page-1, pageSize));
+
+        return posts.toList();
     }
     @Override
     public PostDto createPost(PostRequest postRequest) {
@@ -48,8 +58,8 @@ public class PostServiceImpl implements PostService{
         return new PostDto(post.getId(),post.getPost(),post.getPostedBy(),
                 post.getCreatedAt(),post.getUpdatedAt(),
                 likeFeign.getLikesCount(post.getId())
-                ,commentFeign.getCommentsCount(post.getId()));
-//                userFeign.getUserById(post.getPostedBy()).getFirstName());
+                ,commentFeign.getCommentsCount(post.getId()),userFeign.getUserById(post.getPostedBy()));
+
 
     }
 
@@ -61,8 +71,8 @@ public class PostServiceImpl implements PostService{
             Post post = post1.get();
             return new PostDto(post.getId(), post.getPost(), post.getPostedBy(), post.getCreatedAt(),
                     post.getUpdatedAt(), likeFeign.getLikesCount(postId),
-                    commentFeign.getCommentsCount(postId));
-//                    userFeign.getUserById(post.getPostedBy()).getFirstName());
+                    commentFeign.getCommentsCount(postId),userFeign.getUserById(post.getPostedBy()));
+
         }
         else{
             throw new PostNotFoundException(POSTNOTFOUND + postId);

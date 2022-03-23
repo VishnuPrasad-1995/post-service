@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
 import java.util.List;
 
 @RestController
@@ -21,8 +21,9 @@ public class PostController {
     PostService postService;
 
     @GetMapping
-    public ResponseEntity<List<Post>> getPosts(){
-        return new ResponseEntity<>(postService.getPosts(), HttpStatus.OK);
+    public ResponseEntity<List<Post>> getPosts(@QueryParam("page") Integer page, @QueryParam("pageSize") Integer pageSize)
+    {
+        return new ResponseEntity<>(postService.getPosts(page, pageSize), HttpStatus.OK);
     }
 
     @PostMapping
