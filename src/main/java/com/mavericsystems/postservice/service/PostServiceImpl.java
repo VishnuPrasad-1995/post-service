@@ -74,7 +74,6 @@ public class PostServiceImpl implements PostService{
 
     @Override
     public PostDto getPostDetails(String postId) {
-
         Optional<Post> post1 = postRepo.findById(postId);
         if(post1.isPresent()) {
             Post post = post1.get();
@@ -91,9 +90,6 @@ public class PostServiceImpl implements PostService{
 
     @Override
     public PostDto updatePost(String postId, PostRequest postRequest) {
-
-
-
         Optional<Post> post = postRepo.findById(postId);
         if(post.isPresent()) {
             Post post1 = post.get();
