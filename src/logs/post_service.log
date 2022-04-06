@@ -558,3 +558,402 @@ feign.RetryableException: 503 error
 2022-04-06 13:17:51.415  INFO 38336 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2022-04-06 13:17:51.431  INFO 38336 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - deregister  status: 200
 2022-04-06 13:17:51.435  INFO 38336 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-06 17:04:06.119  INFO 17204 --- [restartedMain] c.m.postservice.PostServiceApplication   : Starting PostServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 17204 (D:\Spring\Assessment\post-service\target\classes started by vishnup in D:\Spring\Assessment\post-service)
+2022-04-06 17:04:06.258  INFO 17204 --- [restartedMain] c.m.postservice.PostServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 17:04:06.626  INFO 17204 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 17:04:06.627  INFO 17204 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 17:04:11.001  INFO 17204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 17:04:11.835  INFO 17204 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 819 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 17:04:12.607  INFO 17204 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ec9297ca-5fd2-3d79-a086-960361f4e75b
+2022-04-06 17:04:17.226  INFO 17204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3010 (http)
+2022-04-06 17:04:17.249  INFO 17204 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 17:04:17.249  INFO 17204 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 17:04:17.794  INFO 17204 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 17:04:17.795  INFO 17204 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11167 ms
+2022-04-06 17:04:18.941  INFO 17204 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 17:04:19.161  INFO 17204 --- [cluster-rtt-ClusterId{value='624d7aba5d714d1bd88aa7a2', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:94}] to localhost:27017
+2022-04-06 17:04:19.161  INFO 17204 --- [cluster-ClusterId{value='624d7aba5d714d1bd88aa7a2', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:93}] to localhost:27017
+2022-04-06 17:04:19.208  INFO 17204 --- [cluster-ClusterId{value='624d7aba5d714d1bd88aa7a2', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=60049600}
+2022-04-06 17:04:19.607  WARN 17204 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 17:04:20.004  INFO 17204 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-06 17:04:20.250  WARN 17204 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 17:04:21.570  INFO 17204 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 17:04:22.033  INFO 17204 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'comment-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 17:04:22.168  INFO 17204 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 17:04:22.693  WARN 17204 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 17:04:22.694  INFO 17204 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 17:04:22.751  WARN 17204 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 17:04:22.752  INFO 17204 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 17:04:29.359  INFO 17204 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 17:04:33.641  WARN 17204 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 17:04:33.849  INFO 17204 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 17:04:34.675  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 17:04:34.715  INFO 17204 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:04:34.858  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 17:04:34.859  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 17:04:34.859  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 17:04:34.859  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 17:04:34.859  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 17:04:34.860  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 17:04:34.860  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 17:04:38.365  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 17:04:38.372  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 17:04:38.378  INFO 17204 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 17:04:38.395  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649244878391 with initial instances count: 1
+2022-04-06 17:04:38.399  INFO 17204 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application POST-SERVICE with eureka with status UP
+2022-04-06 17:04:38.400  INFO 17204 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649244878400, current=UP, previous=STARTING]
+2022-04-06 17:04:38.404  INFO 17204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 17:04:38.512  INFO 17204 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3010 (http) with context path ''
+2022-04-06 17:04:38.515  INFO 17204 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3010
+2022-04-06 17:04:38.568  INFO 17204 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 17:04:41.533  INFO 17204 --- [restartedMain] c.m.postservice.PostServiceApplication   : Started PostServiceApplication in 46.525 seconds (JVM running for 52.909)
+2022-04-06 17:09:34.904  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:14:34.917  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:19:34.925  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:24:34.933  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:35:52.436  INFO 17204 --- [http-nio-3010-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 17:35:52.447  INFO 17204 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 17:35:52.525  INFO 17204 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 77 ms
+2022-04-06 17:35:54.089  INFO 17204 --- [http-nio-3010-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:102}] to localhost:27017
+2022-04-06 17:35:54.635  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-1] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:35:55.104  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:35:56.064  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:35:56.099  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:35:56.100  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:35:56.125  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:35:56.127  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:35:56.127  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:35:56.127  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:35:56.128  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:35:56.128  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:35:56.129  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:35:56.129  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:35:56.129  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:35:56.130  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:35:56.130  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:35:56.130  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:35:56.131  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:35:56.143  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-3] c.m.p.f.HystrixFallBackCommentFactory    : fallback reason was: {}503 error
+2022-04-06 17:35:56.169  WARN 17204 --- [http-nio-3010-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.postservice.exception.CustomFeignException: Feign call connection issue]
+2022-04-06 17:37:54.939  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:38:41.498  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-4] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:38:41.757  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-5] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:38:41.977  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:38:41.980  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:41.981  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:41.983  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:41.985  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:41.985  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:41.986  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:41.987  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:41.988  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:41.988  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:41.989  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:41.989  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:41.989  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:41.990  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:41.990  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:41.990  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:41.993  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-6] c.m.p.f.HystrixFallBackCommentFactory    : fallback reason was: {}503 error
+2022-04-06 17:38:42.025  WARN 17204 --- [http-nio-3010-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.postservice.exception.CustomFeignException: Feign call connection issue]
+2022-04-06 17:38:45.724  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-7] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:38:45.774  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-8] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:38:45.788  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:38:45.793  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:45.793  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:45.793  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:45.797  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:45.797  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:45.798  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:45.799  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:45.799  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:45.800  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:45.802  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:45.802  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:45.803  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:45.803  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: comment-service
+2022-04-06 17:38:45.805  WARN 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service comment-service
+2022-04-06 17:38:45.806  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 17:38:45.807  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-9] c.m.p.f.HystrixFallBackCommentFactory    : fallback reason was: {}503 error
+2022-04-06 17:38:45.809  WARN 17204 --- [http-nio-3010-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.postservice.exception.CustomFeignException: Feign call connection issue]
+2022-04-06 17:39:37.952  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:39:38.123  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:39:38.224  INFO 17204 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 17:39:39.243  INFO 17204 --- [HystrixTimer-2] c.m.p.f.HystrixFallBackCommentFactory    : fallback reason was: {}null
+2022-04-06 17:39:39.264  WARN 17204 --- [http-nio-3010-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.postservice.exception.CustomFeignException: Feign call connection issue]
+2022-04-06 17:42:54.967  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:47:55.020  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:52:55.097  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:57:55.114  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:02:55.127  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:07:55.144  INFO 17204 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:32:07.407  INFO 12380 --- [restartedMain] c.m.postservice.PostServiceApplication   : Starting PostServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 12380 (D:\Spring\Assessment\post-service\target\classes started by vishnup in D:\Spring\Assessment\post-service)
+2022-04-06 18:32:07.417  INFO 12380 --- [restartedMain] c.m.postservice.PostServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 18:32:07.857  INFO 12380 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 18:32:07.857  INFO 12380 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 18:32:11.240  INFO 12380 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 18:32:11.577  INFO 12380 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 326 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 18:32:12.116  INFO 12380 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ec9297ca-5fd2-3d79-a086-960361f4e75b
+2022-04-06 18:32:14.648  INFO 12380 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3010 (http)
+2022-04-06 18:32:14.668  INFO 12380 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 18:32:14.669  INFO 12380 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 18:32:14.939  INFO 12380 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 18:32:14.939  INFO 12380 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7079 ms
+2022-04-06 18:32:15.356  INFO 12380 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 18:32:15.578  INFO 12380 --- [cluster-rtt-ClusterId{value='624d8f573570f12c2a9d5b35', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:114}] to localhost:27017
+2022-04-06 18:32:15.581  INFO 12380 --- [cluster-ClusterId{value='624d8f573570f12c2a9d5b35', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:113}] to localhost:27017
+2022-04-06 18:32:15.582  INFO 12380 --- [cluster-ClusterId{value='624d8f573570f12c2a9d5b35', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=79140100}
+2022-04-06 18:32:15.864  WARN 12380 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 18:32:16.204  WARN 12380 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-06 18:32:16.383  WARN 12380 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 18:32:17.676  INFO 12380 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:32:17.873  INFO 12380 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'comment-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:32:17.931  INFO 12380 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:32:17.989  WARN 12380 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 18:32:17.990  INFO 12380 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 18:32:18.007  WARN 12380 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 18:32:18.007  INFO 12380 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 18:32:21.079  INFO 12380 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 18:32:23.675  WARN 12380 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 18:32:23.737  INFO 12380 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 18:32:24.005  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 18:32:24.023  INFO 12380 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:32:24.091  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 18:32:24.092  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 18:32:24.092  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 18:32:24.092  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 18:32:24.092  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 18:32:24.093  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 18:32:24.093  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 18:32:26.368  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 18:32:26.374  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 18:32:26.378  INFO 12380 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 18:32:26.393  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649250146388 with initial instances count: 1
+2022-04-06 18:32:26.395  INFO 12380 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application POST-SERVICE with eureka with status UP
+2022-04-06 18:32:26.396  INFO 12380 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649250146396, current=UP, previous=STARTING]
+2022-04-06 18:32:26.399  INFO 12380 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 18:32:26.460  INFO 12380 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3010 (http) with context path ''
+2022-04-06 18:32:26.461  INFO 12380 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3010
+2022-04-06 18:32:26.548  INFO 12380 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 18:32:28.639  INFO 12380 --- [restartedMain] c.m.postservice.PostServiceApplication   : Started PostServiceApplication in 27.703 seconds (JVM running for 29.856)
+2022-04-06 18:34:56.751  INFO 12380 --- [http-nio-3010-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 18:34:56.757  INFO 12380 --- [http-nio-3010-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 18:34:56.820  INFO 12380 --- [http-nio-3010-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 63 ms
+2022-04-06 18:34:58.585  INFO 12380 --- [http-nio-3010-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:119}] to localhost:27017
+2022-04-06 18:34:59.241  INFO 12380 --- [hystrix-HystrixCircuitBreakerFactory-1] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:35:00.222  INFO 12380 --- [HystrixTimer-1] c.m.p.feign.HystrixFallBackUserFactory   : fallback reason was: {}null
+2022-04-06 18:35:00.279  WARN 12380 --- [http-nio-3010-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.postservice.exception.CustomFeignException: Feign call connection issue]
+2022-04-06 18:35:34.547  INFO 12380 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:35:34.585  INFO 12380 --- [hystrix-HystrixCircuitBreakerFactory-3] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:35:35.598  INFO 12380 --- [HystrixTimer-2] c.m.p.feign.HystrixFallBackLikeFactory   : fallback reason was: {}null
+2022-04-06 18:35:35.603  WARN 12380 --- [http-nio-3010-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.postservice.exception.CustomFeignException: Feign call connection issue]
+2022-04-06 18:36:47.236  INFO 12380 --- [hystrix-HystrixCircuitBreakerFactory-4] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:36:47.313  INFO 12380 --- [hystrix-HystrixCircuitBreakerFactory-5] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:36:47.460  INFO 12380 --- [hystrix-HystrixCircuitBreakerFactory-6] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:36:48.466  INFO 12380 --- [HystrixTimer-3] c.m.p.f.HystrixFallBackCommentFactory    : fallback reason was: {}null
+2022-04-06 18:36:48.489  WARN 12380 --- [http-nio-3010-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.postservice.exception.CustomFeignException: Feign call connection issue]
+2022-04-06 18:37:24.118  INFO 12380 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:38:06.497  INFO 12380 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application POST-SERVICE with eureka with status DOWN
+2022-04-06 18:38:06.498  INFO 12380 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649250486498, current=DOWN, previous=UP]
+2022-04-06 18:38:06.499  INFO 12380 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 18:38:06.582  INFO 12380 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 18:38:08.486  INFO 12380 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 18:38:11.511  INFO 12380 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 18:38:12.248  INFO 12380 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - deregister  status: 200
+2022-04-06 18:38:12.290  INFO 12380 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-06 18:38:26.682  INFO 23076 --- [restartedMain] c.m.postservice.PostServiceApplication   : Starting PostServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 23076 (D:\Spring\Assessment\post-service\target\classes started by vishnup in D:\Spring\Assessment\post-service)
+2022-04-06 18:38:26.685  INFO 23076 --- [restartedMain] c.m.postservice.PostServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 18:38:26.831  INFO 23076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 18:38:26.832  INFO 23076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 18:38:29.164  INFO 23076 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 18:38:29.961  INFO 23076 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 786 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 18:38:30.825  INFO 23076 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ac82da33-da36-3913-98bc-f38763637bd0
+2022-04-06 18:38:33.725  INFO 23076 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3010 (http)
+2022-04-06 18:38:33.752  INFO 23076 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 18:38:33.753  INFO 23076 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 18:38:34.006  INFO 23076 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 18:38:34.006  INFO 23076 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7173 ms
+2022-04-06 18:38:34.438  INFO 23076 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 18:38:34.602  INFO 23076 --- [cluster-ClusterId{value='624d90d242a9837a9116a6b9', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:124}] to localhost:27017
+2022-04-06 18:38:34.602  INFO 23076 --- [cluster-rtt-ClusterId{value='624d90d242a9837a9116a6b9', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:123}] to localhost:27017
+2022-04-06 18:38:34.605  INFO 23076 --- [cluster-ClusterId{value='624d90d242a9837a9116a6b9', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=46289300}
+2022-04-06 18:38:34.741  WARN 23076 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 18:38:34.920  WARN 23076 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-06 18:38:35.013  WARN 23076 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 18:38:35.703  INFO 23076 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:38:35.913  INFO 23076 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'comment-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:38:35.974  INFO 23076 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:38:36.077  WARN 23076 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 18:38:36.077  INFO 23076 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 18:38:36.102  WARN 23076 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 18:38:36.103  INFO 23076 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 18:38:39.579  INFO 23076 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 18:38:42.705  WARN 23076 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 18:38:42.842  INFO 23076 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 18:38:43.238  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 18:38:43.299  INFO 23076 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:38:43.510  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 18:38:43.510  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 18:38:43.511  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 18:38:43.511  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 18:38:43.511  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 18:38:43.511  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 18:38:43.511  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 18:38:46.098  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 18:38:46.102  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 18:38:46.106  INFO 23076 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 18:38:46.116  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649250526112 with initial instances count: 4
+2022-04-06 18:38:46.119  INFO 23076 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application POST-SERVICE with eureka with status UP
+2022-04-06 18:38:46.120  INFO 23076 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649250526120, current=UP, previous=STARTING]
+2022-04-06 18:38:46.123  INFO 23076 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 18:38:46.181  INFO 23076 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3010 (http) with context path ''
+2022-04-06 18:38:46.182  INFO 23076 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3010
+2022-04-06 18:38:46.206  INFO 23076 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 18:38:48.102  INFO 23076 --- [restartedMain] c.m.postservice.PostServiceApplication   : Started PostServiceApplication in 25.156 seconds (JVM running for 26.922)
+2022-04-06 18:38:52.629  INFO 23076 --- [http-nio-3010-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 18:38:52.630  INFO 23076 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 18:38:52.631  INFO 23076 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-06 18:38:53.504  INFO 23076 --- [http-nio-3010-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:125}] to localhost:27017
+2022-04-06 18:38:53.572  INFO 23076 --- [http-nio-3010-exec-1] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:38:54.130  INFO 23076 --- [http-nio-3010-exec-1] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:38:54.706  INFO 23076 --- [http-nio-3010-exec-1] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:39:28.941  INFO 23076 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application POST-SERVICE with eureka with status DOWN
+2022-04-06 18:39:28.942  INFO 23076 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649250568942, current=DOWN, previous=UP]
+2022-04-06 18:39:28.942  INFO 23076 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 18:39:28.953  INFO 23076 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 18:39:30.295  INFO 23076 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 18:39:33.300  INFO 23076 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 18:39:33.324  INFO 23076 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - deregister  status: 200
+2022-04-06 18:39:33.332  INFO 23076 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-06 18:39:45.735  INFO 44120 --- [restartedMain] c.m.postservice.PostServiceApplication   : Starting PostServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 44120 (D:\Spring\Assessment\post-service\target\classes started by vishnup in D:\Spring\Assessment\post-service)
+2022-04-06 18:39:45.737  INFO 44120 --- [restartedMain] c.m.postservice.PostServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 18:39:45.873  INFO 44120 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 18:39:45.874  INFO 44120 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 18:39:47.430  INFO 44120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 18:39:47.764  INFO 44120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 319 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 18:39:48.275  INFO 44120 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ec9297ca-5fd2-3d79-a086-960361f4e75b
+2022-04-06 18:39:50.714  INFO 44120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3010 (http)
+2022-04-06 18:39:50.731  INFO 44120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 18:39:50.732  INFO 44120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 18:39:50.937  INFO 44120 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 18:39:50.938  INFO 44120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5061 ms
+2022-04-06 18:39:51.344  INFO 44120 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 18:39:51.497  INFO 44120 --- [cluster-rtt-ClusterId{value='624d911f6d2d387e6e48dfb0', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:126}] to localhost:27017
+2022-04-06 18:39:51.497  INFO 44120 --- [cluster-ClusterId{value='624d911f6d2d387e6e48dfb0', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:127}] to localhost:27017
+2022-04-06 18:39:51.500  INFO 44120 --- [cluster-ClusterId{value='624d911f6d2d387e6e48dfb0', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=49954200}
+2022-04-06 18:39:51.613  WARN 44120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 18:39:51.777  WARN 44120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-06 18:39:51.891  WARN 44120 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 18:39:52.494  INFO 44120 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:39:52.680  INFO 44120 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'comment-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:39:52.746  INFO 44120 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:39:52.813  WARN 44120 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 18:39:52.813  INFO 44120 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 18:39:52.827  WARN 44120 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 18:39:52.827  INFO 44120 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 18:39:55.749  INFO 44120 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 18:39:57.632  WARN 44120 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 18:39:57.667  INFO 44120 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 18:39:57.832  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 18:39:57.845  INFO 44120 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:39:57.903  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 18:39:57.904  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 18:39:57.904  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 18:39:57.904  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 18:39:57.904  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 18:39:57.904  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 18:39:57.904  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 18:39:59.976  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 18:39:59.982  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 18:39:59.985  INFO 44120 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 18:39:59.995  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649250599991 with initial instances count: 5
+2022-04-06 18:39:59.997  INFO 44120 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application POST-SERVICE with eureka with status UP
+2022-04-06 18:39:59.998  INFO 44120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649250599998, current=UP, previous=STARTING]
+2022-04-06 18:40:00.000  INFO 44120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 18:40:00.080  INFO 44120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3010 (http) with context path ''
+2022-04-06 18:40:00.081  INFO 44120 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3010
+2022-04-06 18:40:00.124  INFO 44120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 18:40:01.993  INFO 44120 --- [restartedMain] c.m.postservice.PostServiceApplication   : Started PostServiceApplication in 20.252 seconds (JVM running for 21.757)
+2022-04-06 18:40:07.018  INFO 44120 --- [http-nio-3010-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 18:40:07.018  INFO 44120 --- [http-nio-3010-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 18:40:07.020  INFO 44120 --- [http-nio-3010-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-06 18:40:07.801  INFO 44120 --- [http-nio-3010-exec-3] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:128}] to localhost:27017
+2022-04-06 18:40:08.211  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-1] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:40:08.680  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:40:08.834  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-3] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:40:14.179  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-4] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:40:14.207  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-5] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:40:14.236  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-6] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:40:44.526  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-7] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:40:44.539  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-8] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:40:44.551  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-9] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 18:44:57.940  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:49:57.974  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:54:58.035  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:59:58.060  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:04:58.081  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:09:58.434  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:14:58.448  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:19:58.456  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:24:58.476  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:29:58.526  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:34:58.559  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:39:58.576  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:44:58.578  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:49:58.597  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:54:58.624  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:59:58.663  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:04:58.694  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:09:58.718  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:14:58.735  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:19:58.770  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:24:58.802  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:29:58.841  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:34:58.876  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:39:58.932  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:44:00.808  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:01.094  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:01.118  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.470  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.480  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.489  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.501  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.511  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.637  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.650  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.660  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.668  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.678  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.689  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.700  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.708  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.715  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.723  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.733  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.761  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.770  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.778  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.787  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.796  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.804  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.811  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.818  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.826  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.835  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.842  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.850  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.857  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:10.865  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:40.693  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:40.705  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:40.713  INFO 44120 --- [hystrix-HystrixCircuitBreakerFactory-10] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:44:59.024  INFO 44120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:49:36.500  INFO 44120 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application POST-SERVICE with eureka with status DOWN
+2022-04-06 20:49:36.501  INFO 44120 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649258376501, current=DOWN, previous=UP]
+2022-04-06 20:49:36.502  INFO 44120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 20:49:36.578  INFO 44120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 20:49:38.859  INFO 44120 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 20:49:41.868  WARN 44120 --- [DiscoveryClient-1] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2022-04-06 20:49:41.872  INFO 44120 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 20:49:41.904  INFO 44120 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - deregister  status: 200
+2022-04-06 20:49:41.927  INFO 44120 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
