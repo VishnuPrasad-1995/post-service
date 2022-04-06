@@ -4,6 +4,7 @@ package com.mavericsystems.postservice.service;
 import com.mavericsystems.postservice.dto.PostDto;
 import com.mavericsystems.postservice.dto.PostRequest;
 import com.mavericsystems.postservice.exception.CustomFeignException;
+import com.mavericsystems.postservice.exception.NoPostAvailableException;
 import com.mavericsystems.postservice.exception.PostNotFoundException;
 import com.mavericsystems.postservice.feign.CommentFeign;
 import com.mavericsystems.postservice.feign.LikeFeign;
@@ -53,6 +54,9 @@ public class PostServiceImpl implements PostService{
                         post.getCreatedAt(),post.getUpdatedAt(),
                         likeFeign.getLikesCount(post.getId())
                         ,commentFeign.getCommentsCount(post.getId())));
+            }
+            if(postDtoList.isEmpty()){
+                throw new NoPostAvailableException(NOPOSTFOUND);
             }
             return postDtoList;
         }
