@@ -11,6 +11,8 @@ import com.mavericsystems.postservice.feign.LikeFeign;
 import com.mavericsystems.postservice.feign.UserFeign;
 import com.mavericsystems.postservice.model.Post;
 import com.mavericsystems.postservice.repo.PostRepo;
+import com.netflix.hystrix.exception.HystrixRuntimeException;
+import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -56,15 +58,12 @@ public class PostServiceImpl implements PostService{
                         ,commentFeign.getCommentsCount(post.getId())));
             }
             if(postDtoList.isEmpty()){
-                throw new NoPostAvailableException(NOPOSTFOUND);
+                throw new NoPostAvailableException(NO_POST_FOUND);
             }
             return postDtoList;
         }
-        catch (feign.FeignException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
-        }
-        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
         }
     }
     @Override
@@ -81,11 +80,8 @@ public class PostServiceImpl implements PostService{
                     likeFeign.getLikesCount(post.getId())
                     , commentFeign.getCommentsCount(post.getId()));
             }
-        catch (feign.FeignException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
-        }
-        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
         }
     }
 
@@ -102,14 +98,11 @@ public class PostServiceImpl implements PostService{
 
             }
             else{
-                throw new PostNotFoundException(POSTNOTFOUND + postId);
+                throw new PostNotFoundException(POST_NOT_FOUND + postId);
             }
         }
-        catch (feign.FeignException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
-        }
-        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
         }
     }
 
@@ -127,14 +120,11 @@ public class PostServiceImpl implements PostService{
                         commentFeign.getCommentsCount(postId));
             }
             else {
-                throw new PostNotFoundException(POSTNOTFOUND + postId);
+                throw new PostNotFoundException(POST_NOT_FOUND + postId);
             }
         }
-        catch (feign.FeignException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
-        }
-        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
         }
     }
 
@@ -144,10 +134,10 @@ public class PostServiceImpl implements PostService{
     public String deletePost(String postId) {
         try {
             postRepo.deleteById(postId);
-            return DELETEPOST;
+            return DELETE_POST;
         }
         catch (Exception e){
-            throw new PostNotFoundException(POSTNOTFOUND + postId);
+            throw new PostNotFoundException(POST_NOT_FOUND + postId);
         }
     }
 

@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.ws.rs.QueryParam;
 import java.util.List;
-import static com.mavericsystems.postservice.constant.PostConstant.POSTIDMISMATCH;
+
+import static com.mavericsystems.postservice.constant.PostConstant.POST_ID_MISMATCH;
 
 @CrossOrigin (origins = "http://localhost:8080")
 @RestController
@@ -44,7 +45,7 @@ public class PostController {
             return new ResponseEntity<>(postService.updatePost(postId, postRequest), HttpStatus.OK);
         }
         else {
-            throw new PostIdMismatchException(POSTIDMISMATCH);
+            throw new PostIdMismatchException(POST_ID_MISMATCH);
         }
     }
     @DeleteMapping("/{postId}")

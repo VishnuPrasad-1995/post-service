@@ -32,15 +32,8 @@ public class AppExceptionHandler extends ResponseEntityExceptionHandler {
         apiError.setCode(HttpStatus.SERVICE_UNAVAILABLE.toString());
         return new ResponseEntity<>(apiError, HttpStatus.SERVICE_UNAVAILABLE);
     }
-    @ExceptionHandler(PostIdMismatchException.class)
-    ResponseEntity<ApiError> postIdMismatchHandler(Exception exception, ServletWebRequest request) {
-        ApiError apiError = new ApiError();
-        apiError.setMessage(exception.getLocalizedMessage());
-        apiError.setCode(HttpStatus.BAD_REQUEST.toString());
-        return new ResponseEntity<>(apiError, HttpStatus.BAD_REQUEST);
-    }
-    @ExceptionHandler(NoPostAvailableException.class)
-    ResponseEntity<ApiError> noPostAvailableHandler(Exception exception, ServletWebRequest request) {
+    @ExceptionHandler({PostIdMismatchException.class,NoPostAvailableException.class})
+    ResponseEntity<ApiError> postIdMismatchAndNoPostAvailableHandler(Exception exception, ServletWebRequest request) {
         ApiError apiError = new ApiError();
         apiError.setMessage(exception.getLocalizedMessage());
         apiError.setCode(HttpStatus.BAD_REQUEST.toString());
