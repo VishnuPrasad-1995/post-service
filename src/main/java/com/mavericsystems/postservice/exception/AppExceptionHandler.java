@@ -25,6 +25,21 @@ public class AppExceptionHandler extends ResponseEntityExceptionHandler {
         apiError.setCode(HttpStatus.NOT_FOUND.toString());
         return new ResponseEntity<>(apiError, HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(CustomFeignException.class)
+    ResponseEntity<ApiError> feignNotFoundHandler(Exception exception, ServletWebRequest request) {
+        ApiError apiError = new ApiError();
+        apiError.setMessage(exception.getLocalizedMessage());
+        apiError.setCode(HttpStatus.SERVICE_UNAVAILABLE.toString());
+        return new ResponseEntity<>(apiError, HttpStatus.SERVICE_UNAVAILABLE);
+    }
+    @ExceptionHandler(PostIdMismatchException.class)
+    ResponseEntity<ApiError> postIdMismatchHandler(Exception exception, ServletWebRequest request) {
+        ApiError apiError = new ApiError();
+        apiError.setMessage(exception.getLocalizedMessage());
+        apiError.setCode(HttpStatus.BAD_REQUEST.toString());
+        return new ResponseEntity<>(apiError, HttpStatus.BAD_REQUEST);
+    }
+
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                                                                   HttpHeaders headers, HttpStatus status,
