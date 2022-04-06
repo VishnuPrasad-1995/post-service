@@ -332,3 +332,229 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_251]
 
 2022-04-05 11:32:52.691  INFO 6484 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-06 13:02:29.064  INFO 30316 --- [restartedMain] c.m.postservice.PostServiceApplication   : Starting PostServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 30316 (D:\Spring\Assessment\post-service\target\classes started by vishnup in D:\Spring\Assessment\post-service)
+2022-04-06 13:02:29.067  INFO 30316 --- [restartedMain] c.m.postservice.PostServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 13:02:29.211  INFO 30316 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 13:02:29.211  INFO 30316 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 13:02:31.092  INFO 30316 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 13:02:31.472  INFO 30316 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 368 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 13:02:31.931  INFO 30316 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=67696ffa-67da-3170-8ab8-7cb2de7bb26a
+2022-04-06 13:02:34.450  INFO 30316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3010 (http)
+2022-04-06 13:02:34.474  INFO 30316 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 13:02:34.474  INFO 30316 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 13:02:34.685  INFO 30316 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 13:02:34.686  INFO 30316 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5474 ms
+2022-04-06 13:02:35.045  INFO 30316 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 13:02:35.215  INFO 30316 --- [cluster-rtt-ClusterId{value='624d4213bab9f57a14ce832e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:69}] to localhost:27017
+2022-04-06 13:02:35.215  INFO 30316 --- [cluster-ClusterId{value='624d4213bab9f57a14ce832e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:70}] to localhost:27017
+2022-04-06 13:02:35.218  INFO 30316 --- [cluster-ClusterId{value='624d4213bab9f57a14ce832e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=52756600}
+2022-04-06 13:02:35.336  WARN 30316 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 13:02:35.510  INFO 30316 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-06 13:02:35.603  WARN 30316 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 13:02:36.515  INFO 30316 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 13:02:37.146  INFO 30316 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'comment-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 13:02:37.344  INFO 30316 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 13:02:40.744  INFO 30316 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 13:02:43.191  WARN 30316 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 13:02:43.244  INFO 30316 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 13:02:43.492  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 13:02:43.516  INFO 30316 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 13:02:43.639  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 13:02:43.640  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 13:02:43.640  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 13:02:43.640  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 13:02:43.640  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 13:02:43.641  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 13:02:43.641  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 13:02:46.334  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 13:02:46.337  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 13:02:46.341  INFO 30316 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 13:02:46.354  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649230366349 with initial instances count: 0
+2022-04-06 13:02:46.357  INFO 30316 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application POST-SERVICE with eureka with status UP
+2022-04-06 13:02:46.358  INFO 30316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649230366358, current=UP, previous=STARTING]
+2022-04-06 13:02:46.361  INFO 30316 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 13:02:46.436  INFO 30316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3010 (http) with context path ''
+2022-04-06 13:02:46.438  INFO 30316 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3010
+2022-04-06 13:02:46.605  INFO 30316 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 13:02:48.465  INFO 30316 --- [restartedMain] c.m.postservice.PostServiceApplication   : Started PostServiceApplication in 23.618 seconds (JVM running for 25.288)
+2022-04-06 13:03:16.376  INFO 30316 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 13:03:16.379  INFO 30316 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 13:03:16.379  INFO 30316 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 13:03:16.379  INFO 30316 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 13:03:16.379  INFO 30316 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 13:03:16.379  INFO 30316 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2022-04-06 13:03:16.379  INFO 30316 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 13:03:16.527  INFO 30316 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 13:05:20.687  INFO 30316 --- [http-nio-3010-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 13:05:20.692  INFO 30316 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 13:05:20.766  INFO 30316 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 74 ms
+2022-04-06 13:05:21.300  INFO 30316 --- [http-nio-3010-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:74}] to localhost:27017
+2022-04-06 13:05:21.550  INFO 30316 --- [http-nio-3010-exec-1] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 13:05:22.856  INFO 30316 --- [http-nio-3010-exec-1] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 13:05:22.879  WARN 30316 --- [http-nio-3010-exec-1] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:05:22.880  WARN 30316 --- [http-nio-3010-exec-1] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:05:22.892  INFO 30316 --- [http-nio-3010-exec-1] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:05:22.893  WARN 30316 --- [http-nio-3010-exec-1] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:05:22.893  WARN 30316 --- [http-nio-3010-exec-1] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:05:22.893  INFO 30316 --- [http-nio-3010-exec-1] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:05:22.894  WARN 30316 --- [http-nio-3010-exec-1] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:05:22.894  WARN 30316 --- [http-nio-3010-exec-1] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:05:22.894  INFO 30316 --- [http-nio-3010-exec-1] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:05:22.895  WARN 30316 --- [http-nio-3010-exec-1] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:05:22.895  WARN 30316 --- [http-nio-3010-exec-1] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:05:22.895  INFO 30316 --- [http-nio-3010-exec-1] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:05:22.896  WARN 30316 --- [http-nio-3010-exec-1] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:05:22.896  WARN 30316 --- [http-nio-3010-exec-1] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:05:22.896  INFO 30316 --- [http-nio-3010-exec-1] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:05:22.913 ERROR 30316 --- [http-nio-3010-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is feign.RetryableException: 503 error] with root cause
+
+feign.RetryableException: 503 error
+	at com.mavericsystems.postservice.configuration.MyErrorDecoder.decode(MyErrorDecoder.java:28) ~[classes/:na]
+	at feign.AsyncResponseHandler.handleResponse(AsyncResponseHandler.java:96) ~[feign-core-11.8.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:138) ~[feign-core-11.8.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-11.8.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100) ~[feign-core-11.8.jar:na]
+	at com.sun.proxy.$Proxy105.getLikesCount(Unknown Source) ~[na:na]
+	at com.mavericsystems.postservice.service.PostServiceImpl.getPosts(PostServiceImpl.java:52) ~[classes/:na]
+	at com.mavericsystems.postservice.controller.PostController.getPosts(PostController.java:27) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2022-04-06 13:07:43.677  INFO 30316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 13:12:43.763  INFO 30316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 13:14:40.526  INFO 30316 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application POST-SERVICE with eureka with status DOWN
+2022-04-06 13:14:40.527  INFO 30316 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649231080527, current=DOWN, previous=UP]
+2022-04-06 13:14:40.530  INFO 30316 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 13:14:40.612  INFO 30316 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 13:14:42.458  INFO 30316 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 13:14:45.509  INFO 30316 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 13:14:45.551  INFO 30316 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - deregister  status: 200
+2022-04-06 13:14:45.586  INFO 30316 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-06 13:15:09.378  INFO 38336 --- [restartedMain] c.m.postservice.PostServiceApplication   : Starting PostServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 38336 (D:\Spring\Assessment\post-service\target\classes started by vishnup in D:\Spring\Assessment\post-service)
+2022-04-06 13:15:09.380  INFO 38336 --- [restartedMain] c.m.postservice.PostServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 13:15:09.485  INFO 38336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 13:15:09.486  INFO 38336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 13:15:11.120  INFO 38336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 13:15:11.487  INFO 38336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 356 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 13:15:11.969  INFO 38336 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ec9297ca-5fd2-3d79-a086-960361f4e75b
+2022-04-06 13:15:14.164  INFO 38336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3010 (http)
+2022-04-06 13:15:14.180  INFO 38336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 13:15:14.180  INFO 38336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 13:15:14.447  INFO 38336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 13:15:14.448  INFO 38336 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4961 ms
+2022-04-06 13:15:14.758  INFO 38336 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 13:15:14.897  INFO 38336 --- [cluster-rtt-ClusterId{value='624d450a5aa03f3498e01a46', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:75}] to localhost:27017
+2022-04-06 13:15:14.897  INFO 38336 --- [cluster-ClusterId{value='624d450a5aa03f3498e01a46', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:76}] to localhost:27017
+2022-04-06 13:15:14.899  INFO 38336 --- [cluster-ClusterId{value='624d450a5aa03f3498e01a46', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=42609000}
+2022-04-06 13:15:14.999  WARN 38336 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 13:15:15.200  INFO 38336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-06 13:15:15.294  WARN 38336 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 13:15:15.918  INFO 38336 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 13:15:16.082  INFO 38336 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'comment-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 13:15:16.133  INFO 38336 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 13:15:16.194  WARN 38336 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 13:15:16.194  INFO 38336 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 13:15:16.209  WARN 38336 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 13:15:16.209  INFO 38336 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 13:15:18.803  INFO 38336 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 13:15:20.581  WARN 38336 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 13:15:20.622  INFO 38336 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 13:15:20.762  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 13:15:20.774  INFO 38336 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 13:15:20.833  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 13:15:20.833  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 13:15:20.833  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 13:15:20.834  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 13:15:20.834  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 13:15:20.834  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 13:15:20.834  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 13:15:22.707  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 13:15:22.711  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 13:15:22.716  INFO 38336 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 13:15:22.727  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649231122724 with initial instances count: 2
+2022-04-06 13:15:22.729  INFO 38336 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application POST-SERVICE with eureka with status UP
+2022-04-06 13:15:22.731  INFO 38336 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649231122731, current=UP, previous=STARTING]
+2022-04-06 13:15:22.734  INFO 38336 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 13:15:22.785  INFO 38336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3010 (http) with context path ''
+2022-04-06 13:15:22.786  INFO 38336 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3010
+2022-04-06 13:15:22.833  INFO 38336 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 13:15:24.565  INFO 38336 --- [restartedMain] c.m.postservice.PostServiceApplication   : Started PostServiceApplication in 17.96 seconds (JVM running for 19.359)
+2022-04-06 13:16:18.306  INFO 38336 --- [http-nio-3010-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 13:16:18.306  INFO 38336 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 13:16:18.308  INFO 38336 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-06 13:16:18.434  INFO 38336 --- [http-nio-3010-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:77}] to localhost:27017
+2022-04-06 13:16:18.968  INFO 38336 --- [hystrix-HystrixCircuitBreakerFactory-1] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 13:16:19.468  INFO 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 13:16:19.498  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:16:19.499  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:16:19.504  INFO 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:16:19.506  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:16:19.506  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:16:19.506  INFO 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:16:19.507  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:16:19.507  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:16:19.507  INFO 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:16:19.508  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:16:19.509  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:16:19.509  INFO 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:16:19.509  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 13:16:19.510  WARN 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 13:16:19.510  INFO 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.configuration.MyErrorDecoder       : Retrying in ...
+2022-04-06 13:16:19.517  INFO 38336 --- [hystrix-HystrixCircuitBreakerFactory-2] c.m.p.feign.HystrixFallBackLikeFactory   : fallback reason was: {}503 error
+2022-04-06 13:16:19.536  WARN 38336 --- [http-nio-3010-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.postservice.exception.CustomFeignException: Feign call connection issue]
+2022-04-06 13:17:47.017  INFO 38336 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application POST-SERVICE with eureka with status DOWN
+2022-04-06 13:17:47.017  INFO 38336 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649231267017, current=DOWN, previous=UP]
+2022-04-06 13:17:47.018  INFO 38336 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010: registering service...
+2022-04-06 13:17:47.037  INFO 38336 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-06 13:17:48.409  INFO 38336 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 13:17:51.415  INFO 38336 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 13:17:51.431  INFO 38336 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MDB22LT465.mavericsystems.lan:post-service:3010 - deregister  status: 200
+2022-04-06 13:17:51.435  INFO 38336 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

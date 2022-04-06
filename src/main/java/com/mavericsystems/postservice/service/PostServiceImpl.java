@@ -3,6 +3,7 @@ package com.mavericsystems.postservice.service;
 
 import com.mavericsystems.postservice.dto.PostDto;
 import com.mavericsystems.postservice.dto.PostRequest;
+import com.mavericsystems.postservice.exception.CustomFeignException;
 import com.mavericsystems.postservice.exception.PostNotFoundException;
 import com.mavericsystems.postservice.feign.CommentFeign;
 import com.mavericsystems.postservice.feign.LikeFeign;
@@ -38,70 +39,98 @@ public class PostServiceImpl implements PostService{
 
     @Override
     public List<PostDto> getPosts(Integer page, Integer pageSize) {
-        if(page==null){
-            page=1;
+        try {
+            if(page==null){
+                page=1;
+            }
+            if(pageSize==null){
+                pageSize=10;
+            }
+            Page<Post> posts = postRepo.findAll(PageRequest.of(page-1, pageSize));
+            List<PostDto> postDtoList = new ArrayList<>();
+            for (Post post : posts){
+                postDtoList.add(new PostDto(post.getId(),post.getPost(), userFeign.getUserById(post.getPostedBy()),
+                        post.getCreatedAt(),post.getUpdatedAt(),
+                        likeFeign.getLikesCount(post.getId())
+                        ,commentFeign.getCommentsCount(post.getId())));
+            }
+            return postDtoList;
         }
-        if(pageSize==null){
-            pageSize=10;
+        catch (feign.FeignException e){
+            throw new CustomFeignException(FEIGNEXCEPTON);
         }
-        Page<Post> posts = postRepo.findAll(PageRequest.of(page-1, pageSize));
-        List<PostDto> postDtoList = new ArrayList<>();
-        for (Post post : posts){
-            postDtoList.add(new PostDto(post.getId(),post.getPost(), userFeign.getUserById(post.getPostedBy()),
-                    post.getCreatedAt(),post.getUpdatedAt(),
-                    likeFeign.getLikesCount(post.getId())
-                    ,commentFeign.getCommentsCount(post.getId())));
+        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGNEXCEPTON);
         }
-
-
-        return postDtoList;
     }
     @Override
     public PostDto createPost(PostRequest postRequest) {
-        Post post = new Post();
-        post.setPost(postRequest.getPost());
-        post.setPostedBy(postRequest.getPostedBy());
-        post.setCreatedAt(LocalDate.now());
-        post.setUpdatedAt(LocalDate.now());
-        postRepo.save(post);
-        return new PostDto(post.getId(),post.getPost(),userFeign.getUserById(post.getPostedBy()),
-                post.getCreatedAt(),post.getUpdatedAt(),
-                likeFeign.getLikesCount(post.getId())
-                ,commentFeign.getCommentsCount(post.getId()));
-
-
+        try {
+            Post post = new Post();
+            post.setPost(postRequest.getPost());
+            post.setPostedBy(postRequest.getPostedBy());
+            post.setCreatedAt(LocalDate.now());
+            post.setUpdatedAt(LocalDate.now());
+            postRepo.save(post);
+            return new PostDto(post.getId(), post.getPost(), userFeign.getUserById(post.getPostedBy()),
+                    post.getCreatedAt(), post.getUpdatedAt(),
+                    likeFeign.getLikesCount(post.getId())
+                    , commentFeign.getCommentsCount(post.getId()));
+            }
+        catch (feign.FeignException e){
+            throw new CustomFeignException(FEIGNEXCEPTON);
+        }
+        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGNEXCEPTON);
+        }
     }
 
     @Override
     public PostDto getPostDetails(String postId) {
-        Optional<Post> post1 = postRepo.findById(postId);
-        if(post1.isPresent()) {
-            Post post = post1.get();
+        try {
+            Optional<Post> post1 = postRepo.findById(postId);
+            if(post1.isPresent()) {
+                Post post = post1.get();
 
-            return new PostDto(post.getId(), post.getPost(), userFeign.getUserById(post.getPostedBy()), post.getCreatedAt(),
-                    post.getUpdatedAt(), likeFeign.getLikesCount(postId),
-                    commentFeign.getCommentsCount(postId));
+                return new PostDto(post.getId(), post.getPost(), userFeign.getUserById(post.getPostedBy()), post.getCreatedAt(),
+                        post.getUpdatedAt(), likeFeign.getLikesCount(postId),
+                        commentFeign.getCommentsCount(postId));
 
+            }
+            else{
+                throw new PostNotFoundException(POSTNOTFOUND + postId);
+            }
         }
-        else{
-            throw new PostNotFoundException(POSTNOTFOUND + postId);
+        catch (feign.FeignException e){
+            throw new CustomFeignException(FEIGNEXCEPTON);
+        }
+        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGNEXCEPTON);
         }
     }
 
     @Override
     public PostDto updatePost(String postId, PostRequest postRequest) {
-        Optional<Post> post = postRepo.findById(postId);
-        if(post.isPresent()) {
-            Post post1 = post.get();
-            post1.setPost(postRequest.getPost());
-            post1.setUpdatedAt(LocalDate.now());
-            postRepo.save(post1);
-            return new PostDto(post1.getId(), post1.getPost(), userFeign.getUserById(post1.getPostedBy()), post1.getCreatedAt(),
-                    post1.getUpdatedAt(), likeFeign.getLikesCount(postId),
-                    commentFeign.getCommentsCount(postId));
+        try {
+            Optional<Post> post = postRepo.findById(postId);
+            if(post.isPresent()) {
+                Post post1 = post.get();
+                post1.setPost(postRequest.getPost());
+                post1.setUpdatedAt(LocalDate.now());
+                postRepo.save(post1);
+                return new PostDto(post1.getId(), post1.getPost(), userFeign.getUserById(post1.getPostedBy()), post1.getCreatedAt(),
+                        post1.getUpdatedAt(), likeFeign.getLikesCount(postId),
+                        commentFeign.getCommentsCount(postId));
+            }
+            else {
+                throw new PostNotFoundException(POSTNOTFOUND + postId);
+            }
         }
-        else {
-            throw new PostNotFoundException(POSTNOTFOUND + postId);
+        catch (feign.FeignException e){
+            throw new CustomFeignException(FEIGNEXCEPTON);
+        }
+        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGNEXCEPTON);
         }
     }
 
@@ -117,6 +146,5 @@ public class PostServiceImpl implements PostService{
             throw new PostNotFoundException(POSTNOTFOUND + postId);
         }
     }
-
 
 }
