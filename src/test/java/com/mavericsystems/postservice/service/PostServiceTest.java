@@ -23,7 +23,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -73,10 +72,6 @@ class PostServiceTest {
         when(this.likeFeign.getLikesCount((String) any())).thenReturn(3);
         when(this.commentFeign.getCommentsCount((String) any())).thenThrow(mock(FeignException.class));
         assertThrows(CustomFeignException.class, () -> this.postService.createPost(postRequest));
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.postRepo).save((Post) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentFeign).getCommentsCount((String) any());
     }
 
     @Test
@@ -105,10 +100,6 @@ class PostServiceTest {
         when(this.likeFeign.getLikesCount((String) any())).thenReturn(3);
         when(this.commentFeign.getCommentsCount((String) any())).thenThrow(mock(FeignException.class));
         assertThrows(CustomFeignException.class, () -> this.postService.getPostDetails("1"));
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.postRepo).findById((String) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentFeign).getCommentsCount((String) any());
     }
 
     @Test
@@ -145,11 +136,6 @@ class PostServiceTest {
         when(this.likeFeign.getLikesCount((String) any())).thenReturn(3);
         when(this.commentFeign.getCommentsCount((String) any())).thenThrow(mock(FeignException.class));
         assertThrows(CustomFeignException.class, () -> this.postService.updatePost("1", postRequest));
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.postRepo).save((Post) any());
-        verify(this.postRepo).findById((String) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentFeign).getCommentsCount((String) any());
     }
 
     @Test
@@ -170,10 +156,6 @@ class PostServiceTest {
         when(this.likeFeign.getLikesCount((String) any())).thenReturn(3);
         when(this.commentFeign.getCommentsCount((String) any())).thenReturn(3);
         assertEquals(1, this.postService.getPosts(1, 3).size());
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.postRepo).findAll((org.springframework.data.domain.Pageable) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentFeign).getCommentsCount((String) any());
     }
 
     @Test
@@ -194,10 +176,6 @@ class PostServiceTest {
         when(this.likeFeign.getLikesCount((String) any())).thenReturn(3);
         when(this.commentFeign.getCommentsCount((String) any())).thenThrow(mock(FeignException.class));
         assertThrows(CustomFeignException.class, () -> this.postService.getPosts(1, 3));
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.postRepo).findAll((org.springframework.data.domain.Pageable) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentFeign).getCommentsCount((String) any());
     }
 
     private PostRequest createOnePostToRequest() {
