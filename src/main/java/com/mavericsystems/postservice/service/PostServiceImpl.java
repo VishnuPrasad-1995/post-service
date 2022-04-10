@@ -3,18 +3,24 @@ package com.mavericsystems.postservice.service;
 
 import com.mavericsystems.postservice.dto.PostDto;
 import com.mavericsystems.postservice.dto.PostRequest;
+import com.mavericsystems.postservice.exception.CustomFeignException;
+import com.mavericsystems.postservice.exception.NoPostAvailableException;
 import com.mavericsystems.postservice.exception.PostNotFoundException;
 import com.mavericsystems.postservice.feign.CommentFeign;
 import com.mavericsystems.postservice.feign.LikeFeign;
 import com.mavericsystems.postservice.feign.UserFeign;
 import com.mavericsystems.postservice.model.Post;
 import com.mavericsystems.postservice.repo.PostRepo;
-import javafx.geometry.Pos;
+import com.netflix.hystrix.exception.HystrixRuntimeException;
+import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,10 +41,104 @@ public class PostServiceImpl implements PostService{
 
 
     @Override
-    public List<Post> getPosts() {
-        return postRepo.findAll();
+    public List<PostDto> getPosts(Integer page, Integer pageSize) {
+        try {
+            if(page==null){
+                page=1;
+            }
+            if(pageSize==null){
+                pageSize=10;
+            }
+            Page<Post> posts = postRepo.findAll(PageRequest.of(page-1, pageSize));
+            List<PostDto> postDtoList = new ArrayList<>();
+            for (Post post : posts){
+                postDtoList.add(new PostDto(post.getId(),post.getPost(), userFeign.getUserById(post.getPostedBy()),
+                        post.getCreatedAt(),post.getUpdatedAt(),
+                        likeFeign.getLikesCount(post.getId())
+                        ,commentFeign.getCommentsCount(post.getId())));
+            }
+            if(postDtoList.isEmpty()){
+                throw new NoPostAvailableException(NO_POST_FOUND);
+            }
+            return postDtoList;
+        }
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
+        }
+    }
+    @Override
+    public PostDto createPost(PostRequest postRequest) {
+        try {
+            Post post = new Post();
+            post.setPost(postRequest.getPost());
+            post.setPostedBy(postRequest.getPostedBy());
+            post.setCreatedAt(LocalDate.now());
+            post.setUpdatedAt(LocalDate.now());
+            postRepo.save(post);
+            return new PostDto(post.getId(), post.getPost(), userFeign.getUserById(post.getPostedBy()),
+                    post.getCreatedAt(), post.getUpdatedAt(),
+                    likeFeign.getLikesCount(post.getId())
+                    , commentFeign.getCommentsCount(post.getId()));
+            }
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
+        }
+    }
+
+    @Override
+    public PostDto getPostDetails(String postId) {
+        try {
+            Optional<Post> post1 = postRepo.findById(postId);
+            if(post1.isPresent()) {
+                Post post = post1.get();
+
+                return new PostDto(post.getId(), post.getPost(), userFeign.getUserById(post.getPostedBy()), post.getCreatedAt(),
+                        post.getUpdatedAt(), likeFeign.getLikesCount(postId),
+                        commentFeign.getCommentsCount(postId));
+
+            }
+            else{
+                throw new PostNotFoundException(POST_NOT_FOUND + postId);
+            }
+        }
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
+        }
+    }
+
+    @Override
+    public PostDto updatePost(String postId, PostRequest postRequest) {
+        try {
+            Optional<Post> post = postRepo.findById(postId);
+            if(post.isPresent()) {
+                Post post1 = post.get();
+                post1.setPost(postRequest.getPost());
+                post1.setUpdatedAt(LocalDate.now());
+                postRepo.save(post1);
+                return new PostDto(post1.getId(), post1.getPost(), userFeign.getUserById(post1.getPostedBy()), post1.getCreatedAt(),
+                        post1.getUpdatedAt(), likeFeign.getLikesCount(postId),
+                        commentFeign.getCommentsCount(postId));
+            }
+            else {
+                throw new PostNotFoundException(POST_NOT_FOUND + postId);
+            }
+        }
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
+        }
     }
 
 
+
+    @Override
+    public String deletePost(String postId) {
+        try {
+            postRepo.deleteById(postId);
+            return DELETE_POST;
+        }
+        catch (Exception e){
+            throw new PostNotFoundException(POST_NOT_FOUND + postId);
+        }
+    }
 
 }

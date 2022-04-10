@@ -3,7 +3,6 @@ package com.mavericsystems.postservice.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 @Data
@@ -12,10 +11,9 @@ import java.time.LocalDate;
 public class PostDto {
     private String id;
     private String post;
-    private String postedBy;
+    private UserDto postedBy;
     private LocalDate createdAt;
     private LocalDate updatedAt;
     private int likesCount;
     private int commentsCount;
-//    private String userName;
 }
